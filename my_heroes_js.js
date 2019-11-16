@@ -37,6 +37,9 @@ d3.csv("my_heroes_csv.csv", function(data) {
     .domain(["Tank", "Bruiser", "Support", "Healer", "Ranged Assassin", "Melee Assassin" ])
     .range([ "#73C8FF", "#FF965A", "#73C8FF", "#64C8CD", "#FFCD3C", "#FF5F69"])
 
+  var size = d3.scaleLinear()
+    .domain([0,100])
+
   // Add dots
   svg.append('g')
     .selectAll("dot")
@@ -45,7 +48,7 @@ d3.csv("my_heroes_csv.csv", function(data) {
     .append("circle")
       .attr("cx", function (d) { return x(d.Like); } )
       .attr("cy", function (d) { return y(d.Skilled); } )
-      .attr("r",  function (d) { return d.Played / 20; } )
+      .attr("r",  function (d) { return size(d.Played) / 20; } )
       .style("fill", function (d) { return color(d.Role); } )
       .style("opacity", 0.5; } )
 
