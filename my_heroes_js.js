@@ -23,14 +23,14 @@ d3.csv("my_heroes_csv.csv", function(data) {
     .range([ 0, width ]);
   svg.append("g")
     .attr("transform", "translate(0," + height + ")")
-    .call(d3.axisBottom(x));
+    .call(d3.axisTop(x));
 
   // Add Y axis
   var y = d3.scaleLinear()
     .domain([0,100])
     .range([ height, 0]);
   svg.append("g")
-    .call(d3.axisLeft(y));
+    .call(d3.axisRight(y));
 
   // Color scale: give me a specie name, I return a color
   var color = d3.scaleOrdinal()
@@ -45,9 +45,9 @@ d3.csv("my_heroes_csv.csv", function(data) {
     .append("circle")
       .attr("cx", function (d) { return x(d.Like); } )
       .attr("cy", function (d) { return y(d.Skilled); } )
-      .attr("r",  function (d) { return y(d.Played / 20)  ; } )
+      .attr("r",  function (d) { return y(d.Played ) / 20; } )
       .style("fill", function (d) { return color(d.Role); } )
-      .style("opacity", function (d) { return color(d.Played / 100); } )
+      .style("opacity", function (d) { return color(d.Played) / 100; } )
 
 
     svg.append("g")
