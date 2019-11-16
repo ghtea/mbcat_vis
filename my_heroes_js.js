@@ -48,4 +48,22 @@ d3.csv("my_heroes_csv.csv", function(data) {
       .attr("r",  function (d) { return y(d.Played) / 20 ; } )
       .style("fill", function (d) { return color(d.Role); } )
       .style("opacity", function (d) { return color(d.Played); } )
+
+
+    svg.append("g")
+     .attr("stroke-width", 1.5)
+     .attr("font-family", "sans-serif")
+     .attr("font-size", 10)
+   .selectAll("g")
+   .data(data)
+   .join("g")
+     .attr("transform", d => `translate(${x(d.x)},${y(d.y)})`)
+     .call(g => g.append("circle")
+         .attr("stroke", "steelblue")
+         .attr("fill", "none")
+         .attr("r", 3))
+     .call(g => g.append("text")
+         .attr("dy", "0.35em")
+         .attr("x", 7)
+         .text(d => d.Hero));
 })
