@@ -47,7 +47,10 @@ d3.csv("my_heroes_csv.csv", function(data) {
       .attr("cy", function (d) { return y(d.Skilled); } )
       .attr("r",  function (d) { return y(d.Played ) / 20; } )
       .style("fill", function (d) { return color(d.Role); } )
-      .style("opacity", function (d) { return y(d.Played ) / 100; } )
+      .style("opacity", 0.5; } )
+
+      //need to solve why belows do not work
+      //.style("opacity", function (d) { return y(d.Played ) / 100; } )
 
 
     svg.append("g")
