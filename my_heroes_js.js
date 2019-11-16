@@ -38,7 +38,8 @@ d3.csv("my_heroes_csv.csv", function(data) {
     .range([ "#73C8FF", "#FF965A", "#73C8FF", "#64C8CD", "#FFCD3C", "#FF5F69"])
 
   var size = d3.scaleLinear()
-    .domain([0,100]);
+    .domain([0,100])
+    .range([ 100, 0]);
 
   // Add dots
   svg.append('g')
