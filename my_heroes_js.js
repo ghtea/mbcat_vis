@@ -2,8 +2,8 @@
 
 // set the dimensions and margins of the graph
 var margin = {top: 10, right: 30, bottom: 30, left: 60},
-    width = 460 - margin.left - margin.right,
-    height = 400 - margin.top - margin.bottom;
+    width = 1200 - margin.left - margin.right,
+    height = 800 - margin.top - margin.bottom;
 
 // append the svg object to the body of the page
 var svg = d3.select("#chart")
@@ -45,7 +45,7 @@ d3.csv("my_heroes_csv.csv", function(data) {
     .append("circle")
       .attr("cx", function (d) { return x(d.Like); } )
       .attr("cy", function (d) { return y(d.Skilled); } )
-      .attr("r",  function (d) { return y(d.Played ) / 20; } )
+      .attr("r",  function (d) { return d.Played / 20; } )
       .style("fill", function (d) { return color(d.Role); } )
       .style("opacity", 0.5; } )
 
