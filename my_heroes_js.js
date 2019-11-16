@@ -46,6 +46,6 @@ d3.csv("my_heroes_csv.csv", function(data) {
       .attr("cx", function (d) { return x(d.Like); } )
       .attr("cy", function (d) { return y(d.Skilled); } )
       .attr("r",  function (d) { return y(d.Played); } )
-      .style("fill", function (d) { return color(d.Role) } )
-      .style("opacity", function (d) { return color(d.Played) } )
+      .style("fill", function (d) { return color(d.Role); } )
+      .style("opacity", function (d) { return color(d.Played); } )
 })
