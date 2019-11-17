@@ -35,7 +35,7 @@ d3.csv("my_heroes_csv.csv", function(data) {
   // Color scale: give me a specie name, I return a color
   var color = d3.scaleOrdinal()
     .domain(["Tank", "Bruiser", "Support", "Healer", "Ranged Assassin", "Melee Assassin" ])
-    .range([ "#73C8FF", "#FF965A", "#73C8FF", "#64C8CD", "#FFCD3C", "#FF5F69"])
+    .range([ "#73C8FF", "#FF965A", "#73C8FF", "#64C8CD", "#FFCD3C", "#FF5F69"]);
 
   var size = d3.scaleLinear()
     .domain([0,100])
